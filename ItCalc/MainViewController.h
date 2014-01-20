@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  MainViewController.h
 //  ItCalc
 //
 //  Created by hiro on 2014/01/20.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
+@interface MainViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end
