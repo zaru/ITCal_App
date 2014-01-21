@@ -485,6 +485,7 @@
 				45ED4F3A188D649100C89E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		45ED4F3B188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCalcTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +494,7 @@
 				45ED4F3D188D649100C89E8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

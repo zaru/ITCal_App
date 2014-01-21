@@ -60,9 +60,10 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
-    UILabel *label1 = (UILabel*)[cell viewWithTag:1];
-    label1.text = [[NSString alloc] initWithFormat:@"Section %d", indexPath.section];
-//    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row]; // 何番目のセルかを表示させました
+    
+    UILabel *lTitle = (UILabel *)[cell viewWithTag:1];
+    lTitle.text = @"hogehoge";
+    
     return cell;
 }
 
