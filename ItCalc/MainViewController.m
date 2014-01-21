@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.items = [NSArray array];
+    [self getJSON];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -51,7 +54,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 10;
+//    return 10;
+    return [self.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -64,6 +68,9 @@
     UILabel *lTitle = (UILabel *)[cell viewWithTag:1];
     lTitle.text = @"hogehoge";
     
+    NSDictionary *item = [self.items objectAtIndex:indexPath.row];
+    lTitle.text = [[item objectForKey:@"im:name"] objectForKey:@"label"];
+    
     return cell;
 }
 
@@ -72,6 +79,22 @@
     [self performSegueWithIdentifier:@"selectRow" sender:self];
 }
 
+- (void)getJSON
+{
+    NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/jp/rss/topfreeapplications/limit=10/json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+        
+        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        
+        // アプリデータの配列をプロパティに保持
+        self.items = [[jsonDictionary objectForKey:@"feed"] objectForKey:@"entry"];
+        
+        // TableView をリロード
+        [self.tableView reloadData];
+    }];
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

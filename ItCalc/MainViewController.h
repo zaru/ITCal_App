@@ -10,4 +10,6 @@
 
 @interface MainViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) NSArray *items;
+
 @end
