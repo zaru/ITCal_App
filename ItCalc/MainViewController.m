@@ -79,12 +79,16 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
     
-    UILabel *lTitle = (UILabel *)[cell viewWithTag:1];
-    lTitle.text = @"hogehoge";
-    
-    NSDictionary *item = [self.items objectAtIndex:indexPath.row];
-    lTitle.text = [[item objectForKey:@"im:name"] objectForKey:@"label"];
-    
+    {
+        UILabel *lTitle = (UILabel *)[cell viewWithTag:1];
+        NSDictionary *item = [self.items objectAtIndex:indexPath.row];
+        lTitle.text = [item objectForKey:@"title"];
+    }
+    {
+        UILabel *lCapacity = (UILabel *)[cell viewWithTag:3];
+        NSDictionary *item = [self.items objectAtIndex:indexPath.row];
+        lCapacity.text = [NSString stringWithFormat:@"応募 %@名／定員 %@名", [item objectForKey:@"accepted"], [item objectForKey:@"limit"]];
+    }
     return cell;
 }
 
@@ -104,7 +108,7 @@
  */
 - (void)getJSON
 {
-    NSURL *url = [NSURL URLWithString:@"http://itunes.apple.com/jp/rss/topfreeapplications/limit=10/json"];
+    NSURL *url = [NSURL URLWithString:@"http://connpass.com/api/v1/event/"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request
@@ -114,7 +118,7 @@
         NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         // アプリデータの配列をプロパティに保持
-        self.items = [[jsonDictionary objectForKey:@"feed"] objectForKey:@"entry"];
+        self.items = [jsonDictionary objectForKey:@"events"];
         
         // TableView をリロード
         [self.tableView reloadData];
