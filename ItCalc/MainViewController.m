@@ -27,14 +27,31 @@
 {
     [super viewDidLoad];
     
-    self.items = [NSArray array];
+    // TableViewのひっぱって更新
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self
+                            action:@selector(refreshing:)
+                  forControlEvents:UIControlEventValueChanged];
+    [self setRefreshControl:self.refreshControl];
     
+    // TableViewに初期データ + JSON読み込み
+    self.items = [NSArray array];
     [self getJSON];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+/**
+ *  再読み込み
+ *
+ *  @param refreshControl <#refreshControl description#>
+ */
+-(void)refreshing:(UIRefreshControl*)refreshControl
+{
+    [self getJSON];
 }
 
 #pragma mark - TableViewの設定
@@ -111,14 +128,15 @@
     NSURL *url = [NSURL URLWithString:@"http://connpass.com/api/v1/event/"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
-    [NSURLConnection sendAsynchronousRequest:request
-                                       queue:[NSOperationQueue mainQueue]
-                           completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
+    [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
         NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         
         // アプリデータの配列をプロパティに保持
         self.items = [jsonDictionary objectForKey:@"events"];
+        
+        // 読み込みインジケータを消す
+        [self.refreshControl endRefreshing];
         
         // TableView をリロード
         [self.tableView reloadData];
