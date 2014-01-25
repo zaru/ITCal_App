@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4546FBD71893C2DA008F3EDD /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4546FBD61893C2DA008F3EDD /* PickerViewController.m */; };
 		45ED4F04188D649100C89E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F03188D649100C89E8A /* Foundation.framework */; };
 		45ED4F06188D649100C89E8A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F05188D649100C89E8A /* CoreGraphics.framework */; };
 		45ED4F08188D649100C89E8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F07188D649100C89E8A /* UIKit.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4546FBD51893C2DA008F3EDD /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
+		4546FBD61893C2DA008F3EDD /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
 		45ED4F00188D649100C89E8A /* ItCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ED4F03188D649100C89E8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45ED4F05188D649100C89E8A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,6 +125,8 @@
 				45ED4F0A188D649100C89E8A /* Supporting Files */,
 				45ED4F40188D6ACF00C89E8A /* MainViewController.h */,
 				45ED4F41188D6ACF00C89E8A /* MainViewController.m */,
+				4546FBD51893C2DA008F3EDD /* PickerViewController.h */,
+				4546FBD61893C2DA008F3EDD /* PickerViewController.m */,
 			);
 			path = ItCalc;
 			sourceTree = "<group>";
@@ -258,6 +263,7 @@
 			files = (
 				45ED4F14188D649100C89E8A /* AppDelegate.m in Sources */,
 				45ED4F42188D6ACF00C89E8A /* MainViewController.m in Sources */,
+				4546FBD71893C2DA008F3EDD /* PickerViewController.m in Sources */,
 				45ED4F10188D649100C89E8A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

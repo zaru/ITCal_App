@@ -142,6 +142,70 @@
         [self.tableView reloadData];
     }];
 }
+
+
+// 「選択」ボタンがタップされたときに呼び出されるメソッド
+- (IBAction)openPickerView:(id)sender {
+    // PickerViewControllerのインスタンスをStoryboardから取得し
+    self.pickerViewController = [[self storyboard] instantiateViewControllerWithIdentifier:@"PickerViewController"];
+    self.pickerViewController.delegate = self;
+    
+    // PickerViewをサブビューとして表示する
+    // 表示するときはアニメーションをつけて下から上にゆっくり表示させる
+    
+    // アニメーション完了時のPickerViewの位置を計算
+    UIView *pickerView = self.pickerViewController.view;
+    CGPoint middleCenter = pickerView.center;
+    
+    // アニメーション開始時のPickerViewの位置を計算
+    UIWindow* mainWindow = (((AppDelegate*) [UIApplication sharedApplication].delegate).window);
+    CGSize offSize = [UIScreen mainScreen].bounds.size;
+    CGPoint offScreenCenter = CGPointMake(offSize.width / 2.0, offSize.height * 1.5);
+    pickerView.center = offScreenCenter;
+    
+    [mainWindow addSubview:pickerView];
+    
+    // アニメーションを使ってPickerViewをアニメーション完了時の位置に表示されるようにする
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.5];
+    pickerView.center = middleCenter;
+    [UIView commitAnimations];
+}
+
+// PickerViewのある行が選択されたときに呼び出されるPickerViewControllerDelegateプロトコルのデリゲートメソッド
+- (void)applySelectedString:(NSString *)str
+{
+//    self.selectedStringLabel.text = str;
+}
+
+// PickerViewController上にある透明ボタンがタップされたときに呼び出されるPickerViewControllerDelegateプロトコルのデリゲートメソッド
+- (void)closePickerView:(PickerViewController *)controller
+{
+    // PickerViewをアニメーションを使ってゆっくり非表示にする
+    UIView *pickerView = controller.view;
+    
+    // アニメーション完了時のPickerViewの位置を計算
+    CGSize offSize = [UIScreen mainScreen].bounds.size;
+    CGPoint offScreenCenter = CGPointMake(offSize.width / 2.0, offSize.height * 1.5);
+    
+    [UIView beginAnimations:nil context:(void *)pickerView];
+    [UIView setAnimationDuration:0.3];
+    [UIView setAnimationDelegate:self];
+    // アニメーション終了時に呼び出す処理を設定
+    [UIView setAnimationDidStopSelector:@selector(animationDidStop:finished:context:)];
+    pickerView.center = offScreenCenter;
+    [UIView commitAnimations];
+}
+
+// 単位のPickerViewを閉じるアニメーションが終了したときに呼び出されるメソッド
+- (void)animationDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
+{
+    // PickerViewをサブビューから削除
+    UIView *pickerView = (__bridge UIView *)context;
+    [pickerView removeFromSuperview];
+}
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

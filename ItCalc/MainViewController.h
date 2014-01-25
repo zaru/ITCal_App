@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
+#import "PickerViewController.h"
 
-@interface MainViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface MainViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, PickerViewControllerDelegate>
 
 @property (nonatomic, strong) NSArray *items;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+
+// 呼び出すPickerViewControllerのポインタ　※strongを指定してポインタを掴んでおかないと解放されてしまう
+@property (strong, nonatomic) PickerViewController *pickerViewController;
+
+// 「選択」ボタンがタップされたときに呼び出されるメソッド
+- (IBAction)openPickerView:(id)sender;
 
 @end
