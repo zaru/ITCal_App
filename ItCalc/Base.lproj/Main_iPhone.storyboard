@@ -94,13 +94,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="IT勉強会" id="6WC-jF-gEo">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="989-aR-tvG">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnPref" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yPl-9V-hNA">
-                                <rect key="frame" x="233" y="5" width="71" height="33"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnPref" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yPl-9V-hNA">
+                                <rect key="frame" x="224" y="11" width="80" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="都道府県">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                                <state key="normal" title="都道府県"/>
                                 <connections>
                                     <action selector="openPickerView:" destination="Ma6-Zm-4We" eventType="touchUpInside" id="F5A-v5-Yxf"/>
                                 </connections>
@@ -175,6 +173,17 @@
                             <pickerView contentMode="scaleToFill" id="qpv-y0-rUL">
                                 <rect key="frame" x="0.0" y="352" width="320" height="216"/>
                             </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="kkM-xZ-Gtm">
+                                <rect key="frame" x="0.0" y="308" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="決定" id="4Zo-07-bhC">
+                                        <connections>
+                                            <action selector="closePickerView:" destination="7Er-5D-nz5" id="uXm-WT-VX1"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                     </view>
                     <connections>
