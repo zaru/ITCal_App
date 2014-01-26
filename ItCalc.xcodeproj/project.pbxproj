@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		4546FBD71893C2DA008F3EDD /* PickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4546FBD61893C2DA008F3EDD /* PickerViewController.m */; };
+		4546FBDA1893D14C008F3EDD /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4546FBD91893D14C008F3EDD /* TagViewController.m */; };
+		4546FBDD1894B2D4008F3EDD /* Tag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4546FBDB1894B2D4008F3EDD /* Tag.xcdatamodeld */; };
+		4546FBDF1894B336008F3EDD /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4546FBDE1894B336008F3EDD /* CoreData.framework */; };
+		4546FC6A1894D658008F3EDD /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4546FC691894D658008F3EDD /* Tag.m */; };
+		4546FCBD1895095E008F3EDD /* TagAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4546FCBC1895095E008F3EDD /* TagAddViewController.m */; };
 		45ED4F04188D649100C89E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F03188D649100C89E8A /* Foundation.framework */; };
 		45ED4F06188D649100C89E8A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F05188D649100C89E8A /* CoreGraphics.framework */; };
 		45ED4F08188D649100C89E8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F07188D649100C89E8A /* UIKit.framework */; };
@@ -38,6 +43,14 @@
 /* Begin PBXFileReference section */
 		4546FBD51893C2DA008F3EDD /* PickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewController.h; sourceTree = "<group>"; };
 		4546FBD61893C2DA008F3EDD /* PickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewController.m; sourceTree = "<group>"; };
+		4546FBD81893D14C008F3EDD /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
+		4546FBD91893D14C008F3EDD /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
+		4546FBDC1894B2D4008F3EDD /* Tag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tag.xcdatamodel; sourceTree = "<group>"; };
+		4546FBDE1894B336008F3EDD /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4546FC681894D658008F3EDD /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		4546FC691894D658008F3EDD /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		4546FCBB1895095E008F3EDD /* TagAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagAddViewController.h; sourceTree = "<group>"; };
+		4546FCBC1895095E008F3EDD /* TagAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagAddViewController.m; sourceTree = "<group>"; };
 		45ED4F00188D649100C89E8A /* ItCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ED4F03188D649100C89E8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45ED4F05188D649100C89E8A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4546FBDF1894B336008F3EDD /* CoreData.framework in Frameworks */,
 				45ED4F06188D649100C89E8A /* CoreGraphics.framework in Frameworks */,
 				45ED4F08188D649100C89E8A /* UIKit.framework in Frameworks */,
 				45ED4F04188D649100C89E8A /* Foundation.framework in Frameworks */,
@@ -106,6 +120,7 @@
 		45ED4F02188D649100C89E8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4546FBDE1894B336008F3EDD /* CoreData.framework */,
 				45ED4F03188D649100C89E8A /* Foundation.framework */,
 				45ED4F05188D649100C89E8A /* CoreGraphics.framework */,
 				45ED4F07188D649100C89E8A /* UIKit.framework */,
@@ -127,6 +142,13 @@
 				45ED4F41188D6ACF00C89E8A /* MainViewController.m */,
 				4546FBD51893C2DA008F3EDD /* PickerViewController.h */,
 				4546FBD61893C2DA008F3EDD /* PickerViewController.m */,
+				4546FBD81893D14C008F3EDD /* TagViewController.h */,
+				4546FBD91893D14C008F3EDD /* TagViewController.m */,
+				4546FC681894D658008F3EDD /* Tag.h */,
+				4546FC691894D658008F3EDD /* Tag.m */,
+				4546FBDB1894B2D4008F3EDD /* Tag.xcdatamodeld */,
+				4546FCBB1895095E008F3EDD /* TagAddViewController.h */,
+				4546FCBC1895095E008F3EDD /* TagAddViewController.m */,
 			);
 			path = ItCalc;
 			sourceTree = "<group>";
@@ -261,9 +283,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4546FBDA1893D14C008F3EDD /* TagViewController.m in Sources */,
 				45ED4F14188D649100C89E8A /* AppDelegate.m in Sources */,
 				45ED4F42188D6ACF00C89E8A /* MainViewController.m in Sources */,
+				4546FC6A1894D658008F3EDD /* Tag.m in Sources */,
 				4546FBD71893C2DA008F3EDD /* PickerViewController.m in Sources */,
+				4546FCBD1895095E008F3EDD /* TagAddViewController.m in Sources */,
+				4546FBDD1894B2D4008F3EDD /* Tag.xcdatamodeld in Sources */,
 				45ED4F10188D649100C89E8A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -503,6 +529,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4546FBDB1894B2D4008F3EDD /* Tag.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4546FBDC1894B2D4008F3EDD /* Tag.xcdatamodel */,
+			);
+			currentVersion = 4546FBDC1894B2D4008F3EDD /* Tag.xcdatamodel */;
+			path = Tag.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 45ED4EF8188D649100C89E8A /* Project object */;
 }
