@@ -11,6 +11,7 @@
 #import "Tag.h"
 
 @interface TagAddViewController ()
+
 @property (weak, nonatomic) IBOutlet UITextField *name;
 
 @end
@@ -39,12 +40,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+/**
+ *  お気に入りキーワード登録
+ *
+ *  @param sender <#sender description#>
+ */
 - (IBAction)submit:(id)sender {
-    NSLog(@"%@", self.name.text);
     
+    // お気に入りキーワードを追加
     Tag *tagDataCore = [[Tag alloc] init];
     [tagDataCore setValue:self.name.text forKey:CoreDataTagKey];
     
+    // モーダルを閉じる
     [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
 }
 @end
