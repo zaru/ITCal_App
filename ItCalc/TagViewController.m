@@ -25,8 +25,8 @@
         return nil;
     }
     
-    // Tagモデル
-    self.tagDataCore = [[Tag alloc] init];
+    // Tagモデル読み込み＆デリゲートセット
+    self.tagDataCore = [[Tag alloc] init:self];
     
     return self;
 }
@@ -48,14 +48,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    // CoreDataから最新情報を読み込み
-    [[self.tagDataCore fetchedResultsController] performFetch:nil];
-    [self.tableView reloadData];
 }
 
 #pragma mark - Table View

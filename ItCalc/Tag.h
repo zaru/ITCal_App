@@ -13,6 +13,10 @@
 
 @interface Tag : NSObject <NSFetchedResultsControllerDelegate>
 
+- (id)init:(id)delegate;
+
+@property (nonatomic, strong) id delegate;
+
 @property (nonatomic, readonly) NSManagedObjectContext * managedObjectContext;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 

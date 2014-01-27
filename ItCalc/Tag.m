@@ -19,6 +19,38 @@
     return appDelegate.managedObjectContext;
 }
 
+/**
+ *  初期化
+ *
+ *  @return <#return value description#>
+ */
+- (id)init
+{
+    return [self init:nil];
+}
+
+/**
+ *  初期化 + デリゲートセット
+ *
+ *  @param delegate <#delegate description#>
+ *
+ *  @return <#return value description#>
+ */
+- (id)init:(id)delegate
+{
+    self = [super init];
+    if (self) {
+        self.delegate = delegate;
+    }
+    return self;
+}
+
+/**
+ *  データ保存
+ *
+ *  @param value <#value description#>
+ *  @param key   <#key description#>
+ */
 - (void) setValue:(id)value forKey:(NSString *)key {
     
     NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
@@ -56,7 +88,7 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
-    aFetchedResultsController.delegate = self;
+    aFetchedResultsController.delegate = self.delegate;
     self.fetchedResultsController = aFetchedResultsController;
     
 	NSError *error = nil;
