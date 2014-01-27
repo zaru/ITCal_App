@@ -9,7 +9,6 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
-
 @end
 
 @implementation MainViewController
@@ -125,7 +124,12 @@
  */
 - (void)getJSON
 {
-    NSURL *url = [NSURL URLWithString:@"http://connpass.com/api/v1/event/"];
+    NSURL *url;
+    if (self.searchWord) {
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@", self.searchWord]];
+    } else {
+        url = [NSURL URLWithString:@"http://connpass.com/api/v1/event/"];
+    }
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {

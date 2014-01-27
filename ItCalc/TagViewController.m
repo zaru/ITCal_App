@@ -8,7 +8,7 @@
 
 #import "TagViewController.h"
 
-#import "AppDelegate.h"
+#import "MainViewController.h"
 
 @interface TagViewController ()
 
@@ -121,12 +121,23 @@
     }
 }
 
+/**
+ *  View遷移
+ *
+ *  @param segue  <#segue description#>
+ *  @param sender <#sender description#>
+ */
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    // 気になるワードでの検索結果へ遷移
+    if ([[segue identifier] isEqualToString:@"searchWord"]) {
+        
+        // 選択されたキーワードを取得
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self.tagDataCore fetchedResultsController] objectAtIndexPath:indexPath];
-//        [[segue destinationViewController] setDetailItem:object];
+        
+        MainViewController *viewController = (MainViewController*)[segue destinationViewController];
+        viewController.searchWord = [object valueForKey:CoreDataTagKey];
     }
 }
 

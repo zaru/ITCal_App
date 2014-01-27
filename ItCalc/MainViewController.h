@@ -21,4 +21,6 @@
 // 「選択」ボタンがタップされたときに呼び出されるメソッド
 - (IBAction)openPickerView:(id)sender;
 
+@property (strong, nonatomic) NSString *searchWord;
+
 @end
