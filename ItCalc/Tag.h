@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "Const.h"
 
-@interface Tag : NSManagedObject
+@interface Tag : NSObject <NSFetchedResultsControllerDelegate>
 
-@property (nonatomic, retain) NSString * name;
+@property (nonatomic, readonly) NSManagedObjectContext * managedObjectContext;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @end

@@ -11,7 +11,4 @@
 
 @interface TagAddViewController : UIViewController
 
-@property (nonatomic, readonly) NSManagedObjectContext * managedObjectContext;
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-
 @end
