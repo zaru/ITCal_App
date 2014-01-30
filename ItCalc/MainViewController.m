@@ -9,6 +9,8 @@
 #import "MainViewController.h"
 
 @interface MainViewController ()
+@property (strong, nonatomic) UIActivityIndicatorView *ai;
+@property (strong, nonatomic) UIView *indiView;
 @end
 
 @implementation MainViewController
@@ -33,9 +35,25 @@
                   forControlEvents:UIControlEventValueChanged];
     [self setRefreshControl:self.refreshControl];
     
+    // API読み込みインジケータ
+    self.indiView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+    self.indiView.backgroundColor = [UIColor blackColor];
+    self.indiView.alpha = 0.8f;
+    self.indiView.center = self.view.center;
+    self.indiView.layer.cornerRadius = 5;
+    self.indiView.hidden = YES;
+    self.ai = [[UIActivityIndicatorView alloc] init];
+    self.ai.frame = CGRectMake(5, 5, 50, 50);
+    self.ai.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+    [self.indiView addSubview:self.ai];
+    [self.view addSubview:self.indiView];
+    
     // TableViewに初期データ + JSON読み込み
     self.items = [NSArray array];
     [self getJSON];
+    
+    // TableViewが空の場合は罫線を表示しないようにする
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -124,6 +142,10 @@
  */
 - (void)getJSON
 {
+    // インジケータ表示
+    self.indiView.hidden = NO;
+    [self.ai startAnimating];
+    
     NSURL *url;
     if (self.searchWord) {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@", self.searchWord]];
@@ -141,6 +163,9 @@
         
         // 読み込みインジケータを消す
         [self.refreshControl endRefreshing];
+        
+        self.indiView.hidden = YES;
+        [self.ai stopAnimating];
         
         // TableView をリロード
         [self.tableView reloadData];
