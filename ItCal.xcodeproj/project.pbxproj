@@ -54,22 +54,22 @@
 		4546FCBC1895095E008F3EDD /* TagAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagAddViewController.m; sourceTree = "<group>"; };
 		456610B51896895A007527FB /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		456610B61896895A007527FB /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
-		45ED4F00188D649100C89E8A /* ItCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		45ED4F00188D649100C89E8A /* ItCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ED4F03188D649100C89E8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45ED4F05188D649100C89E8A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		45ED4F07188D649100C89E8A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		45ED4F0B188D649100C89E8A /* ItCalc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ItCalc-Info.plist"; sourceTree = "<group>"; };
+		45ED4F0B188D649100C89E8A /* ItCal-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ItCal-Info.plist"; sourceTree = "<group>"; };
 		45ED4F0D188D649100C89E8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45ED4F0F188D649100C89E8A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		45ED4F11188D649100C89E8A /* ItCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItCalc-Prefix.pch"; sourceTree = "<group>"; };
+		45ED4F11188D649100C89E8A /* ItCal-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ItCal-Prefix.pch"; sourceTree = "<group>"; };
 		45ED4F12188D649100C89E8A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		45ED4F13188D649100C89E8A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		45ED4F16188D649100C89E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		45ED4F19188D649100C89E8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
 		45ED4F21188D649100C89E8A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		45ED4F27188D649100C89E8A /* ItCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		45ED4F27188D649100C89E8A /* ItCalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ItCalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ED4F28188D649100C89E8A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		45ED4F30188D649100C89E8A /* ItCalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ItCalcTests-Info.plist"; sourceTree = "<group>"; };
+		45ED4F30188D649100C89E8A /* ItCalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ItCalTests-Info.plist"; sourceTree = "<group>"; };
 		45ED4F32188D649100C89E8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		45ED4F34188D649100C89E8A /* ItCalcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItCalcTests.m; sourceTree = "<group>"; };
 		45ED4F40188D6ACF00C89E8A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		45ED4F01188D649100C89E8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				45ED4F00188D649100C89E8A /* ItCalc.app */,
-				45ED4F27188D649100C89E8A /* ItCalcTests.xctest */,
+				45ED4F00188D649100C89E8A /* ItCal.app */,
+				45ED4F27188D649100C89E8A /* ItCalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -161,10 +161,10 @@
 		45ED4F0A188D649100C89E8A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				45ED4F0B188D649100C89E8A /* ItCalc-Info.plist */,
+				45ED4F0B188D649100C89E8A /* ItCal-Info.plist */,
 				45ED4F0C188D649100C89E8A /* InfoPlist.strings */,
 				45ED4F0F188D649100C89E8A /* main.m */,
-				45ED4F11188D649100C89E8A /* ItCalc-Prefix.pch */,
+				45ED4F11188D649100C89E8A /* ItCal-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -181,7 +181,7 @@
 		45ED4F2F188D649100C89E8A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				45ED4F30188D649100C89E8A /* ItCalcTests-Info.plist */,
+				45ED4F30188D649100C89E8A /* ItCalTests-Info.plist */,
 				45ED4F31188D649100C89E8A /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -190,9 +190,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		45ED4EFF188D649100C89E8A /* ItCalc */ = {
+		45ED4EFF188D649100C89E8A /* ItCal */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45ED4F38188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCalc" */;
+			buildConfigurationList = 45ED4F38188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCal" */;
 			buildPhases = (
 				45ED4EFC188D649100C89E8A /* Sources */,
 				45ED4EFD188D649100C89E8A /* Frameworks */,
@@ -202,14 +202,14 @@
 			);
 			dependencies = (
 			);
-			name = ItCalc;
+			name = ItCal;
 			productName = ItCalc;
-			productReference = 45ED4F00188D649100C89E8A /* ItCalc.app */;
+			productReference = 45ED4F00188D649100C89E8A /* ItCal.app */;
 			productType = "com.apple.product-type.application";
 		};
-		45ED4F26188D649100C89E8A /* ItCalcTests */ = {
+		45ED4F26188D649100C89E8A /* ItCalTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 45ED4F3B188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCalcTests" */;
+			buildConfigurationList = 45ED4F3B188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCalTests" */;
 			buildPhases = (
 				45ED4F23188D649100C89E8A /* Sources */,
 				45ED4F24188D649100C89E8A /* Frameworks */,
@@ -220,9 +220,9 @@
 			dependencies = (
 				45ED4F2D188D649100C89E8A /* PBXTargetDependency */,
 			);
-			name = ItCalcTests;
+			name = ItCalTests;
 			productName = ItCalcTests;
-			productReference = 45ED4F27188D649100C89E8A /* ItCalcTests.xctest */;
+			productReference = 45ED4F27188D649100C89E8A /* ItCalTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -242,7 +242,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 45ED4EFB188D649100C89E8A /* Build configuration list for PBXProject "ItCalc" */;
+			buildConfigurationList = 45ED4EFB188D649100C89E8A /* Build configuration list for PBXProject "ItCal" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -255,8 +255,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				45ED4EFF188D649100C89E8A /* ItCalc */,
-				45ED4F26188D649100C89E8A /* ItCalcTests */,
+				45ED4EFF188D649100C89E8A /* ItCal */,
+				45ED4F26188D649100C89E8A /* ItCalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -313,7 +313,7 @@
 /* Begin PBXTargetDependency section */
 		45ED4F2D188D649100C89E8A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 45ED4EFF188D649100C89E8A /* ItCalc */;
+			target = 45ED4EFF188D649100C89E8A /* ItCal */;
 			targetProxy = 45ED4F2C188D649100C89E8A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -436,10 +436,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ItCalc/ItCalc-Prefix.pch";
-				INFOPLIST_FILE = "ItCalc/ItCalc-Info.plist";
+				GCC_PREFIX_HEADER = "ItCalc/ItCal-Prefix.pch";
+				INFOPLIST_FILE = "ItCalc/ItCal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ItCal;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,10 +453,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ItCalc/ItCalc-Prefix.pch";
-				INFOPLIST_FILE = "ItCalc/ItCalc-Info.plist";
+				GCC_PREFIX_HEADER = "ItCalc/ItCal-Prefix.pch";
+				INFOPLIST_FILE = "ItCalc/ItCal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ItCal;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -478,8 +478,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ItCalcTests/ItCalcTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "ItCalcTests/ItCalTests-Info.plist";
+				PRODUCT_NAME = ItCalTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -497,8 +497,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ItCalc/ItCalc-Prefix.pch";
-				INFOPLIST_FILE = "ItCalcTests/ItCalcTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "ItCalcTests/ItCalTests-Info.plist";
+				PRODUCT_NAME = ItCalTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -507,7 +507,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		45ED4EFB188D649100C89E8A /* Build configuration list for PBXProject "ItCalc" */ = {
+		45ED4EFB188D649100C89E8A /* Build configuration list for PBXProject "ItCal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45ED4F36188D649100C89E8A /* Debug */,
@@ -516,7 +516,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45ED4F38188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCalc" */ = {
+		45ED4F38188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCal" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45ED4F39188D649100C89E8A /* Debug */,
@@ -525,7 +525,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		45ED4F3B188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCalcTests" */ = {
+		45ED4F3B188D649100C89E8A /* Build configuration list for PBXNativeTarget "ItCalTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				45ED4F3C188D649100C89E8A /* Debug */,

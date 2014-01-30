@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "45ED4EFF188D649100C89E8A"
-               BuildableName = "ItCalc.app"
-               BlueprintName = "ItCalc"
-               ReferencedContainer = "container:ItCalc.xcodeproj">
+               BuildableName = "ItCal.app"
+               BlueprintName = "ItCal"
+               ReferencedContainer = "container:ItCal.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "45ED4F26188D649100C89E8A"
-               BuildableName = "ItCalcTests.xctest"
-               BlueprintName = "ItCalcTests"
-               ReferencedContainer = "container:ItCalc.xcodeproj">
+               BuildableName = "ItCalTests.xctest"
+               BlueprintName = "ItCalTests"
+               ReferencedContainer = "container:ItCal.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45ED4EFF188D649100C89E8A"
-            BuildableName = "ItCalc.app"
-            BlueprintName = "ItCalc"
-            ReferencedContainer = "container:ItCalc.xcodeproj">
+            BuildableName = "ItCal.app"
+            BlueprintName = "ItCal"
+            ReferencedContainer = "container:ItCal.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45ED4EFF188D649100C89E8A"
-            BuildableName = "ItCalc.app"
-            BlueprintName = "ItCalc"
-            ReferencedContainer = "container:ItCalc.xcodeproj">
+            BuildableName = "ItCal.app"
+            BlueprintName = "ItCal"
+            ReferencedContainer = "container:ItCal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "45ED4EFF188D649100C89E8A"
-            BuildableName = "ItCalc.app"
-            BlueprintName = "ItCalc"
-            ReferencedContainer = "container:ItCalc.xcodeproj">
+            BuildableName = "ItCal.app"
+            BlueprintName = "ItCal"
+            ReferencedContainer = "container:ItCal.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
