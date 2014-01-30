@@ -11,6 +11,7 @@
 @interface MainViewController ()
 @property (strong, nonatomic) UIActivityIndicatorView *ai;
 @property (strong, nonatomic) UIView *indiView;
+@property int currentPage;
 @end
 
 @implementation MainViewController
@@ -27,6 +28,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // 初期ページ数を設定
+    self.currentPage = 1;
     
     // TableViewのひっぱって更新
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -138,6 +142,20 @@
 }
 
 /**
+ *  最後のセルが表示されたら次頁を自動で読み込む
+ *
+ *  @param tableView <#tableView description#>
+ *  @param cell      <#cell description#>
+ *  @param indexPath <#indexPath description#>
+ */
+-(void)tableView:(UITableView*)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row >= (self.currentPage) * ListNum - 1) {
+        self.currentPage++;
+        [self getJSON];
+    }
+}
+
+/**
  *  JSONファイルをネットワーク越しに取得して、TableViewを更新する
  */
 - (void)getJSON
@@ -148,18 +166,19 @@
     
     NSURL *url;
     if (self.searchWord) {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@", self.searchWord]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@&start=%d&count=%d", self.searchWord, (self.currentPage - 1) * ListNum + 1, ListNum]];
     } else {
-        url = [NSURL URLWithString:@"http://connpass.com/api/v1/event/"];
+        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?start=%d&count=%d", (self.currentPage - 1) * ListNum + 1, ListNum]];
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
-        NSDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSMutableDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+        NSArray *tmp = self.items;
         
         // アプリデータの配列をプロパティに保持
-        self.items = [jsonDictionary objectForKey:@"events"];
+        self.items = [tmp arrayByAddingObjectsFromArray:[jsonDictionary objectForKey:@"events"]];
         
         // 読み込みインジケータを消す
         [self.refreshControl endRefreshing];
@@ -169,6 +188,12 @@
         
         // TableView をリロード
         [self.tableView reloadData];
+        
+        // 自動ページングの場合、分かりやすいように、ちょっと上にスクロールさせる
+        if (self.currentPage > 1) {
+            NSIndexPath* indexPath = [NSIndexPath indexPathForRow:(self.currentPage - 1) * ListNum - 7 inSection:0];
+            [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        }
     }];
 }
 

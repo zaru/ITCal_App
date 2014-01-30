@@ -13,5 +13,6 @@
 NSString * const CoreDataName = @"Tag";
 NSString * const CoreDataEntityName = @"Tag";
 NSString * const CoreDataTagKey = @"name";
+int const ListNum = 20;
 
 @end
