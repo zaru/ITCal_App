@@ -83,6 +83,9 @@
                                     </subviews>
                                     <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ELD-vQ-0pu" kind="push" identifier="detailData" id="vwC-7c-5j0"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -105,9 +108,6 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="ELD-vQ-0pu" kind="push" identifier="selectRow" id="pzf-qe-ked"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7ea-7y-YPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -235,16 +235,38 @@
             </objects>
             <point key="canvasLocation" x="618" y="567"/>
         </scene>
-        <!--View Controller - Title-->
+        <!--Detail View Controller - 詳細-->
         <scene sceneID="WAW-HA-eSC">
             <objects>
-                <viewController id="ELD-vQ-0pu" sceneMemberID="viewController">
+                <viewController id="ELD-vQ-0pu" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JeQ-Vd-idp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9lx-XJ-xkY">
+                                <rect key="frame" x="110" y="205" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="bt_safari">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openSafari:" destination="ELD-vQ-0pu" eventType="touchUpInside" id="2RE-er-NC4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b8B-Du-164">
+                                <rect key="frame" x="139" y="132" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="8ft-Cc-Agg"/>
+                    <navigationItem key="navigationItem" title="詳細" id="8ft-Cc-Agg"/>
+                    <connections>
+                        <outlet property="url" destination="b8B-Du-164" id="Iq8-Nr-u59"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5At-zV-wT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -332,6 +354,7 @@
         <image name="bg_date" width="42" height="42"/>
         <image name="bt_add" width="100" height="30"/>
         <image name="bt_close" width="60" height="20"/>
+        <image name="bt_safari" width="100" height="30"/>
         <image name="icon_add" width="30" height="30"/>
         <image name="icon_list" width="30" height="30"/>
         <image name="icon_tag" width="30" height="30"/>
@@ -342,6 +365,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="csd-wj-4eg"/>
+        <segue reference="xfb-av-8JJ"/>
     </inferredMetricsTieBreakers>
 </document>

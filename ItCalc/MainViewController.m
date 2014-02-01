@@ -7,6 +7,7 @@
 //
 
 #import "MainViewController.h"
+#import "DetailViewController.h"
 
 @interface MainViewController ()
 @property (strong, nonatomic) UIActivityIndicatorView *ai;
@@ -152,7 +153,27 @@
  */
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"selectRow" sender:self];
+//    [self performSegueWithIdentifier:@"detailData" sender:self];
+}
+
+/**
+ *  View遷移
+ *
+ *  @param segue  <#segue description#>
+ *  @param sender <#sender description#>
+ */
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    // 気になるワードでの検索結果へ遷移
+    if ([[segue identifier] isEqualToString:@"detailData"]) {
+        
+        // 選択されたキーワードを取得
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSDictionary *targetData = [self.items objectAtIndex:indexPath.row];
+        
+        DetailViewController *viewController = (DetailViewController*)[segue destinationViewController];
+        viewController.detailData = [targetData valueForKey:@"event_url"];
+    }
 }
 
 /**

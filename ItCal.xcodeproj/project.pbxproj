@@ -30,6 +30,7 @@
 		45ED4F35188D649100C89E8A /* ItCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED4F34188D649100C89E8A /* ItCalcTests.m */; };
 		45ED4F42188D6ACF00C89E8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED4F41188D6ACF00C89E8A /* MainViewController.m */; };
 		45EE4392189CCA5B00FDCFCA /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */; };
+		45EE4395189CE5C300FDCFCA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE4394189CE5C300FDCFCA /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,8 @@
 		45ED4F41188D6ACF00C89E8A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		45EE4390189CCA5B00FDCFCA /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
 		45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
+		45EE4393189CE5C300FDCFCA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		45EE4394189CE5C300FDCFCA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +162,8 @@
 				456610B61896895A007527FB /* Const.m */,
 				45EE4390189CCA5B00FDCFCA /* CommonFunctions.h */,
 				45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */,
+				45EE4393189CE5C300FDCFCA /* DetailViewController.h */,
+				45EE4394189CE5C300FDCFCA /* DetailViewController.m */,
 			);
 			path = ItCalc;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 				45EE4392189CCA5B00FDCFCA /* CommonFunctions.m in Sources */,
 				4546FC6A1894D658008F3EDD /* Tag.m in Sources */,
 				4546FBD71893C2DA008F3EDD /* PickerViewController.m in Sources */,
+				45EE4395189CE5C300FDCFCA /* DetailViewController.m in Sources */,
 				4546FCBD1895095E008F3EDD /* TagAddViewController.m in Sources */,
 				4546FBDD1894B2D4008F3EDD /* Tag.xcdatamodeld in Sources */,
 				45ED4F10188D649100C89E8A /* main.m in Sources */,
