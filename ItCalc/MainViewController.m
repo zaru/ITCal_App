@@ -50,7 +50,15 @@
     self.ai.frame = CGRectMake(5, 5, 50, 50);
     self.ai.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
     [self.indiView addSubview:self.ai];
-    [self.view addSubview:self.indiView];
+    // tableviewcontrollerに載せるとスクロールに対応できないのでnavigationControllerにする
+    [self.navigationController.view addSubview:self.indiView];
+    
+    // iOS6対応
+    if (![CommonFunctions isIOS7]) {
+        [[[self navigationController] navigationBar] setTintColor:[UIColor colorWithRed:61/255.0 green:60/255.0 blue:62/255.0 alpha:1.0]];
+    }
+    
+//    [[UITabBar appearance] setBackgroundImage:[UIImage imageNamed:@"tab"]];
     
     // TableViewに初期データ + JSON読み込み
     self.items = [NSArray array];

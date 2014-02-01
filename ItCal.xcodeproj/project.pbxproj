@@ -29,6 +29,7 @@
 		45ED4F33188D649100C89E8A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 45ED4F31188D649100C89E8A /* InfoPlist.strings */; };
 		45ED4F35188D649100C89E8A /* ItCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED4F34188D649100C89E8A /* ItCalcTests.m */; };
 		45ED4F42188D6ACF00C89E8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED4F41188D6ACF00C89E8A /* MainViewController.m */; };
+		45EE4392189CCA5B00FDCFCA /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,8 @@
 		45ED4F34188D649100C89E8A /* ItCalcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ItCalcTests.m; sourceTree = "<group>"; };
 		45ED4F40188D6ACF00C89E8A /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		45ED4F41188D6ACF00C89E8A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		45EE4390189CCA5B00FDCFCA /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
+		45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 				4546FCBC1895095E008F3EDD /* TagAddViewController.m */,
 				456610B51896895A007527FB /* Const.h */,
 				456610B61896895A007527FB /* Const.m */,
+				45EE4390189CCA5B00FDCFCA /* CommonFunctions.h */,
+				45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */,
 			);
 			path = ItCalc;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				4546FBDA1893D14C008F3EDD /* TagViewController.m in Sources */,
 				45ED4F14188D649100C89E8A /* AppDelegate.m in Sources */,
 				45ED4F42188D6ACF00C89E8A /* MainViewController.m in Sources */,
+				45EE4392189CCA5B00FDCFCA /* CommonFunctions.m in Sources */,
 				4546FC6A1894D658008F3EDD /* Tag.m in Sources */,
 				4546FBD71893C2DA008F3EDD /* PickerViewController.m in Sources */,
 				4546FCBD1895095E008F3EDD /* TagAddViewController.m in Sources */,

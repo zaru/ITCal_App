@@ -19,6 +19,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // iOS6対応
+    if (![CommonFunctions isIOS7]) {
+        UIImage* tabBarBackground = [UIImage imageNamed:@"tab"];
+        [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+        [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
+    }
     return YES;
 }
 							

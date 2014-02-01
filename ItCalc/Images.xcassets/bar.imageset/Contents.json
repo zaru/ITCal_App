@@ -2,12 +2,13 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "bar-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "bg_date.png"
+      "filename" : "bar.png"
     }
   ],
   "info" : {

@@ -14,6 +14,9 @@
                         <rect key="frame" x="0.0" y="431" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.23529411759999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.23921568630000001" green="0.23529411759999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="smm-SR-I2D" kind="relationship" relationship="viewControllers" id="Tmk-lJ-wnM"/>
@@ -28,22 +31,14 @@
         <scene sceneID="315-sb-c7r">
             <objects>
                 <tableViewController id="Ma6-Zm-4We" customClass="MainViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7Rq-ub-iyg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="7Rq-ub-iyg">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" placeholder="検索キーワード" id="F9q-Lb-oWQ">
-                            <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <scopeButtonTitles>
-                                <string>Title</string>
-                                <string>Title</string>
-                            </scopeButtonTitles>
-                        </searchBar>
+                        <color key="separatorColor" red="0.72941176470000002" green="0.84313725490000002" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CustomCell" id="Ega-n6-YZr">
-                                <rect key="frame" x="0.0" y="130" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ega-n6-YZr" id="vVi-s1-8Qq">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -85,6 +80,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -96,11 +92,11 @@
                     <navigationItem key="navigationItem" title="IT勉強会" id="6WC-jF-gEo">
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="989-aR-tvG">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="btnPref" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yPl-9V-hNA">
-                                <rect key="frame" x="224" y="11" width="80" height="22"/>
+                                <rect key="frame" x="235" y="11" width="80" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="エリア検索">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="area_search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="openPickerView:" destination="Ma6-Zm-4We" eventType="touchUpInside" id="F5A-v5-Yxf"/>
@@ -132,6 +128,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="Ma6-Zm-4We" kind="push" identifier="searchWord" id="xfb-av-8JJ"/>
                                 </connections>
@@ -144,10 +141,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="気になるキーワード" id="qkc-nJ-5ko">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="bJQ-9e-TMz">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" id="8p7-mK-INu">
-                                <rect key="frame" x="282" y="11" width="22" height="22"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8p7-mK-INu">
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="icon_add"/>
                                 <connections>
                                     <segue destination="OJx-lz-hJo" kind="modal" id="YTi-Tj-gBu"/>
                                 </connections>
@@ -194,13 +192,51 @@
             </objects>
             <point key="canvasLocation" x="1712" y="567"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="6BO-Lu-6SN">
+            <objects>
+                <viewController id="SsA-FC-mwF" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y6Z-Uz-bTk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="crJ-wC-NGX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <navigationBar contentMode="scaleToFill" id="0ja-Cf-kHx">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <textAttributes key="titleTextAttributes">
+                                            <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </textAttributes>
+                                        <items>
+                                            <navigationItem title="Title" id="Wy0-qi-eHJ"/>
+                                        </items>
+                                    </navigationBar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnI-4m-hr7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2119" y="449"/>
+        </scene>
         <!--Navigation Controller - 気になる-->
         <scene sceneID="02W-Bw-zv9">
             <objects>
                 <navigationController definesPresentationContext="YES" id="hRq-jH-uVM" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="気になる" id="5No-vE-tFd"/>
+                    <tabBarItem key="tabBarItem" title="気になる" image="icon_tag" id="5No-vE-tFd"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9nv-Qr-8ut">
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.23529411759999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="n4g-hc-na5" kind="relationship" relationship="rootViewController" id="b8n-7s-mcI"/>
@@ -215,7 +251,7 @@
             <objects>
                 <viewController id="ELD-vQ-0pu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JeQ-Vd-idp">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -229,11 +265,17 @@
         <scene sceneID="hmQ-hL-Gxk">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="smm-SR-I2D" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="一覧" id="cSB-S6-kVM"/>
+                    <tabBarItem key="tabBarItem" title="一覧" image="icon_list" id="cSB-S6-kVM"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="65v-iy-g1q">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="65v-iy-g1q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.23921568630000001" green="0.23529411759999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.23921568630000001" green="0.23529411759999999" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -294,7 +336,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bg_date" width="84" height="84"/>
+        <image name="area_search" width="80" height="22"/>
+        <image name="bg_date" width="42" height="42"/>
+        <image name="icon_add" width="30" height="30"/>
+        <image name="icon_list" width="30" height="30"/>
+        <image name="icon_tag" width="30" height="30"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -302,6 +348,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="xfb-av-8JJ"/>
+        <segue reference="csd-wj-4eg"/>
     </inferredMetricsTieBreakers>
 </document>
