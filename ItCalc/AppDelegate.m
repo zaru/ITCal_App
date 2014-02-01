@@ -20,7 +20,7 @@
 {
     // Override point for customization after application launch.
     
-    // iOS6対応
+    // タブバーのデザイン変更
     UIImage* tabBarBackground = [UIImage imageNamed:@"tab"];
     [[UITabBar appearance] setBackgroundImage:tabBarBackground];
     [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];

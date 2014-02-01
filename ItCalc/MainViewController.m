@@ -12,6 +12,7 @@
 @property (strong, nonatomic) UIActivityIndicatorView *ai;
 @property (strong, nonatomic) UIView *indiView;
 @property int currentPage;
+@property (strong, nonatomic) NSString *selectedPref;
 @end
 
 @implementation MainViewController
@@ -166,14 +167,19 @@
 /**
  *  JSONファイルをネットワーク越しに取得して、TableViewを更新する
  */
-- (void)getJSON
-{
+- (void)getJSON {
+    [self getJSON:NO];
+}
+
+- (void)getJSON:(BOOL)isAllClear {
     // インジケータ表示
     self.indiView.hidden = NO;
     [self.ai startAnimating];
     
     NSURL *url;
-    if (self.searchWord) {
+    if (self.selectedPref && ![self.selectedPref isEqualToString:@"すべて"]) {
+        url = [NSURL URLWithString:[[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@&start=%d&count=%d", self.selectedPref, (self.currentPage - 1) * ListNum + 1, ListNum] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    } else if (self.searchWord) {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@&start=%d&count=%d", self.searchWord, (self.currentPage - 1) * ListNum + 1, ListNum]];
     } else {
         url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?start=%d&count=%d", (self.currentPage - 1) * ListNum + 1, ListNum]];
@@ -182,11 +188,17 @@
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
         
-        NSMutableDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-        NSArray *tmp = self.items;
-        
-        // アプリデータの配列をプロパティに保持
-        self.items = [tmp arrayByAddingObjectsFromArray:[jsonDictionary objectForKey:@"events"]];
+        // 検索時など既存データをクリアする場合
+        if (isAllClear) {
+            self.items = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] objectForKey:@"events"];
+        } else {
+            // ページング処理の場合は、すでに表示させているデータを保持する
+            NSMutableDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSArray *tmp = self.items;
+            
+            // アプリデータの配列をプロパティに保持
+            self.items = [tmp arrayByAddingObjectsFromArray:[jsonDictionary objectForKey:@"events"]];
+        }
         
         // 読み込みインジケータを消す
         [self.refreshControl endRefreshing];
@@ -204,6 +216,7 @@
         }
     }];
 }
+
 
 
 // 「選択」ボタンがタップされたときに呼び出されるメソッド
@@ -237,7 +250,8 @@
 // PickerViewのある行が選択されたときに呼び出されるPickerViewControllerDelegateプロトコルのデリゲートメソッド
 - (void)applySelectedString:(NSString *)str
 {
-//    self.selectedStringLabel.text = str;
+    self.selectedPref = str;
+    [self getJSON:YES];
 }
 
 // PickerViewController上にある透明ボタンがタップされたときに呼び出されるPickerViewControllerDelegateプロトコルのデリゲートメソッド
