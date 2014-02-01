@@ -33,6 +33,11 @@
     // 初期ページ数を設定
     self.currentPage = 1;
     
+    // 検索時のキーワードをタイトルバーへ
+    if (self.searchWord) {
+        self.title = self.searchWord;
+    }
+    
     // TableViewのひっぱって更新
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self
@@ -251,6 +256,11 @@
 - (void)applySelectedString:(NSString *)str
 {
     self.selectedPref = str;
+    if ([self.selectedPref isEqualToString:@"すべて"]) {
+        self.title = @"勉強会";
+    } else {
+        self.title = self.selectedPref;
+    }
     [self getJSON:YES];
 }
 
