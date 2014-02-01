@@ -21,11 +21,11 @@
     // Override point for customization after application launch.
     
     // iOS6対応
-    if (![CommonFunctions isIOS7]) {
-        UIImage* tabBarBackground = [UIImage imageNamed:@"tab"];
-        [[UITabBar appearance] setBackgroundImage:tabBarBackground];
-        [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
-    }
+    UIImage* tabBarBackground = [UIImage imageNamed:@"tab"];
+    [[UITabBar appearance] setBackgroundImage:tabBarBackground];
+    [[UITabBar appearance] setSelectedImageTintColor:[UIColor whiteColor]];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
     return YES;
 }
 							
