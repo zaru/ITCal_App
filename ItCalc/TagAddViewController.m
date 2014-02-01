@@ -54,4 +54,14 @@
     // モーダルを閉じる
     [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
 }
+
+/**
+ *  モーダルを閉じる
+ *
+ *  @param sender <#sender description#>
+ */
+- (IBAction)close:(id)sender {
+    [[self presentingViewController] dismissViewControllerAnimated:NO completion:nil];
+}
+
 @end
