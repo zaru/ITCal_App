@@ -217,7 +217,7 @@
     if (self.selectedPref && ![self.selectedPref isEqualToString:@"すべて"]) {
         url = [NSURL URLWithString:[[NSString stringWithFormat:ApiUriKeyword, self.selectedPref, (self.currentPage - 1) * ListNum + 1, ListNum] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     } else if (self.searchWord) {
-        url = [NSURL URLWithString:[NSString stringWithFormat:ApiUriKeyword, self.searchWord, (self.currentPage - 1) * ListNum + 1, ListNum]];
+        url = [NSURL URLWithString:[[NSString stringWithFormat:ApiUriKeyword, self.searchWord, (self.currentPage - 1) * ListNum + 1, ListNum]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     } else {
         url = [NSURL URLWithString:[NSString stringWithFormat:ApiUri, (self.currentPage - 1) * ListNum + 1, ListNum]];
     }
