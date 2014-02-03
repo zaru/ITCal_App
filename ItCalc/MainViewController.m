@@ -131,16 +131,27 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
     }
+    NSDictionary *item = [[self.items objectAtIndex:indexPath.row] objectForKey:@"Event"];
     
     {
         UILabel *lTitle = (UILabel *)[cell viewWithTag:1];
-        NSDictionary *item = [self.items objectAtIndex:indexPath.row];
         lTitle.text = [item objectForKey:@"title"];
     }
     {
+        UILabel *lService = (UILabel *)[cell viewWithTag:2];
+        lService.text = [item objectForKey:@"service_id"];
+    }
+    {
         UILabel *lCapacity = (UILabel *)[cell viewWithTag:3];
-        NSDictionary *item = [self.items objectAtIndex:indexPath.row];
-        lCapacity.text = [NSString stringWithFormat:@"応募 %@名／定員 %@名", [item objectForKey:@"accepted"], [item objectForKey:@"limit"]];
+        lCapacity.text = [NSString stringWithFormat:@"応募 %@名／定員 %@名", [item objectForKey:@"applicant"], [item objectForKey:@"capacity"]];
+    }
+    {
+        UILabel *lYear = (UILabel *)[cell viewWithTag:4];
+        lYear.text = [item objectForKey:@"year"];
+    }
+    {
+        UILabel *lDay = (UILabel *)[cell viewWithTag:5];
+        lDay.text = [item objectForKey:@"day"];
     }
     return cell;
 }
@@ -204,11 +215,11 @@
     
     NSURL *url;
     if (self.selectedPref && ![self.selectedPref isEqualToString:@"すべて"]) {
-        url = [NSURL URLWithString:[[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@&start=%d&count=%d", self.selectedPref, (self.currentPage - 1) * ListNum + 1, ListNum] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        url = [NSURL URLWithString:[[NSString stringWithFormat:ApiUriKeyword, self.selectedPref, (self.currentPage - 1) * ListNum + 1, ListNum] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     } else if (self.searchWord) {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?keyword=%@&start=%d&count=%d", self.searchWord, (self.currentPage - 1) * ListNum + 1, ListNum]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:ApiUriKeyword, self.searchWord, (self.currentPage - 1) * ListNum + 1, ListNum]];
     } else {
-        url = [NSURL URLWithString:[NSString stringWithFormat:@"http://connpass.com/api/v1/event/?start=%d&count=%d", (self.currentPage - 1) * ListNum + 1, ListNum]];
+        url = [NSURL URLWithString:[NSString stringWithFormat:ApiUri, (self.currentPage - 1) * ListNum + 1, ListNum]];
     }
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -216,14 +227,14 @@
         
         // 検索時など既存データをクリアする場合
         if (isAllClear) {
-            self.items = [[NSJSONSerialization JSONObjectWithData:data options:0 error:nil] objectForKey:@"events"];
+            self.items = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
         } else {
             // ページング処理の場合は、すでに表示させているデータを保持する
-            NSMutableDictionary *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+            NSArray *jsonDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSArray *tmp = self.items;
             
             // アプリデータの配列をプロパティに保持
-            self.items = [tmp arrayByAddingObjectsFromArray:[jsonDictionary objectForKey:@"events"]];
+            self.items = [tmp arrayByAddingObjectsFromArray:jsonDictionary];
         }
         
         // 読み込みインジケータを消す

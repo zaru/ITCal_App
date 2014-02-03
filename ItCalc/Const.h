@@ -14,5 +14,7 @@ extern NSString * const CoreDataName;
 extern NSString * const CoreDataEntityName;
 extern NSString * const CoreDataTagKey;
 extern int const ListNum;
+extern NSString * const ApiUri;
+extern NSString * const ApiUriKeyword;
 
 @end
