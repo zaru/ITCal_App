@@ -172,7 +172,7 @@
         NSDictionary *targetData = [self.items objectAtIndex:indexPath.row];
         
         DetailViewController *viewController = (DetailViewController*)[segue destinationViewController];
-        viewController.detailData = [targetData valueForKey:@"event_url"];
+        viewController.detailData = targetData;
     }
 }
 

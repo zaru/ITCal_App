@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
-@property (strong, nonatomic) NSString *detailData;
+@property (strong, nonatomic) NSDictionary *detailData;
 
 @end
