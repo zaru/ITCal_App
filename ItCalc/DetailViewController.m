@@ -2,16 +2,15 @@
 //  DetailViewController.m
 //  ItCal
 //
-//  Created by hiro on 2014/02/01.
+//  Created by hiro on 2014/02/05.
 //  Copyright (c) 2014年 hiro. All rights reserved.
 //
 
 #import "DetailViewController.h"
-#import "UILabel+EstimatedHeight.h"
 
 @interface DetailViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *eMessage;
-@property (weak, nonatomic) IBOutlet UILabel *eTitle;
+@property (weak, nonatomic) IBOutlet UIWebView *wv;
+
 @end
 
 @implementation DetailViewController
@@ -28,10 +27,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
     
-    self.eTitle.text = [self.detailData valueForKey:@"title"];
-    self.eMessage.text = [self.detailData valueForKey:@"description"];
+    self.wv.delegate = self;
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"detail" ofType:@"html" inDirectory:@"html"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    [self.wv loadRequest:req];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,31 +42,91 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)openSafari:(id)sender {
-    NSURL *url = [NSURL URLWithString:[self.detailData objectForKey:@"event_url"]];
-    [[UIApplication sharedApplication] openURL:url];
+/**
+ *  WevView読み込み完了時に、JSを実行する
+ *
+ *  @param webView <#webView description#>
+ */
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    // JS実行
+    [self jsSetTitle:[self.detailData objectForKey:@"title"]];
+    [self jsSetDescription:[self.detailData objectForKey:@"description"]];
+    [self jsSetAddress:[self.detailData objectForKey:@"address"]];
+    [self jsSetPlace:[self.detailData objectForKey:@"place"]];
+    [self jsSetBegin:[self.detailData objectForKey:@"begin"]];
+    [self jsSetEnd:[self.detailData objectForKey:@"end"]];
+    [self jsSetCapacity:[self.detailData objectForKey:@"capacity"]];
+    [self jsSetApplicant:[self.detailData objectForKey:@"applicant"]];
 }
 
 /**
- *  セルの内包物によって高さを変更したいが…
+ *  WebView内のクリックイベント処理
  *
- *  @param tableView <#tableView description#>
- *  @param indexPath <#indexPath description#>
+ *  @param webView        <#webView description#>
+ *  @param request        <#request description#>
+ *  @param navigationType <#navigationType description#>
  *
  *  @return <#return value description#>
  */
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath*)indexPath
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-//    if (indexPath.row == 1) {
-//        CGFloat height = [UILabel xx_estimatedHeight:[UIFont systemFontOfSize:12]
-//                                                text:[self.detailData valueForKey:@"description"]
-//                                                size:CGSizeMake(300, MAXFLOAT)];
-//        CGFloat margin = 0;
-//        
-//        return height + margin;
-//    } else {
-        return 44;
-//    }
+    static NSString* const callbackProtocol = @"app-callback://";
+    
+    NSString *url = [[request URL] absoluteString];
+    if ([url hasPrefix:callbackProtocol]) {
+        NSString *method = [url substringFromIndex:[callbackProtocol length]];
+        if ([method isEqualToString:@"map"]) {
+            NSString *map = [NSString stringWithFormat:@"http://maps.apple.com/maps?ll=%@,%@", [self.detailData objectForKey:@"lat"], [self.detailData objectForKey:@"lon"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:map]];
+        } else if ([method isEqualToString:@"safari"]) {
+            NSURL *url = [NSURL URLWithString:@"http://d.hatena.ne.jp/murapong"];
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        return NO;
+    }
+    
+    return YES;
 }
 
+- (void)jsSetTitle:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setTitle('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
+- (void)jsSetDescription:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setDescription('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
+- (void)jsSetAddress:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setAddress('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
+- (void)jsSetPlace:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setPlace('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
+- (void)jsSetBegin:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setBegin('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
+- (void)jsSetEnd:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setEnd('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
+- (void)jsSetCapacity:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setCapacity('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
+- (void)jsSetApplicant:(NSString *)param
+{
+    NSString* script = [NSString stringWithFormat:@"window.setApplicant('%@');", param];
+    [self.wv stringByEvaluatingJavaScriptFromString:script];
+}
 @end

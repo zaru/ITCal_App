@@ -14,7 +14,9 @@
 		4546FC6A1894D658008F3EDD /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4546FC691894D658008F3EDD /* Tag.m */; };
 		4546FCBD1895095E008F3EDD /* TagAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4546FCBC1895095E008F3EDD /* TagAddViewController.m */; };
 		456610B71896895A007527FB /* Const.m in Sources */ = {isa = PBXBuildFile; fileRef = 456610B61896895A007527FB /* Const.m */; };
-		45B40FCC189E8EF000A4D879 /* UILabel+EstimatedHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 45B40FCB189E8EF000A4D879 /* UILabel+EstimatedHeight.m */; };
+		4574911D18A27A8A0036AB06 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4574911C18A27A8A0036AB06 /* CoreText.framework */; };
+		4574912418A27FC40036AB06 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4574912318A27FC40036AB06 /* DetailViewController.m */; };
+		4574912818A282A50036AB06 /* html in Resources */ = {isa = PBXBuildFile; fileRef = 4574912718A282A50036AB06 /* html */; };
 		45ED4F04188D649100C89E8A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F03188D649100C89E8A /* Foundation.framework */; };
 		45ED4F06188D649100C89E8A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F05188D649100C89E8A /* CoreGraphics.framework */; };
 		45ED4F08188D649100C89E8A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45ED4F07188D649100C89E8A /* UIKit.framework */; };
@@ -31,7 +33,6 @@
 		45ED4F35188D649100C89E8A /* ItCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED4F34188D649100C89E8A /* ItCalcTests.m */; };
 		45ED4F42188D6ACF00C89E8A /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED4F41188D6ACF00C89E8A /* MainViewController.m */; };
 		45EE4392189CCA5B00FDCFCA /* CommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */; };
-		45EE4395189CE5C300FDCFCA /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 45EE4394189CE5C300FDCFCA /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,8 +58,10 @@
 		4546FCBC1895095E008F3EDD /* TagAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagAddViewController.m; sourceTree = "<group>"; };
 		456610B51896895A007527FB /* Const.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Const.h; sourceTree = "<group>"; };
 		456610B61896895A007527FB /* Const.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Const.m; sourceTree = "<group>"; };
-		45B40FCA189E8EF000A4D879 /* UILabel+EstimatedHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+EstimatedHeight.h"; sourceTree = "<group>"; };
-		45B40FCB189E8EF000A4D879 /* UILabel+EstimatedHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+EstimatedHeight.m"; sourceTree = "<group>"; };
+		4574911C18A27A8A0036AB06 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		4574912218A27FC40036AB06 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		4574912318A27FC40036AB06 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		4574912718A282A50036AB06 /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
 		45ED4F00188D649100C89E8A /* ItCal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ItCal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45ED4F03188D649100C89E8A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		45ED4F05188D649100C89E8A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -81,8 +84,6 @@
 		45ED4F41188D6ACF00C89E8A /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		45EE4390189CCA5B00FDCFCA /* CommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonFunctions.h; sourceTree = "<group>"; };
 		45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonFunctions.m; sourceTree = "<group>"; };
-		45EE4393189CE5C300FDCFCA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		45EE4394189CE5C300FDCFCA /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4574911D18A27A8A0036AB06 /* CoreText.framework in Frameworks */,
 				4546FBDF1894B336008F3EDD /* CoreData.framework in Frameworks */,
 				45ED4F06188D649100C89E8A /* CoreGraphics.framework in Frameworks */,
 				45ED4F08188D649100C89E8A /* UIKit.framework in Frameworks */,
@@ -113,8 +115,6 @@
 		45ED4EF7188D649100C89E8A = {
 			isa = PBXGroup;
 			children = (
-				45B40FCA189E8EF000A4D879 /* UILabel+EstimatedHeight.h */,
-				45B40FCB189E8EF000A4D879 /* UILabel+EstimatedHeight.m */,
 				45ED4F09188D649100C89E8A /* ItCalc */,
 				45ED4F2E188D649100C89E8A /* ItCalcTests */,
 				45ED4F02188D649100C89E8A /* Frameworks */,
@@ -134,6 +134,7 @@
 		45ED4F02188D649100C89E8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4574911C18A27A8A0036AB06 /* CoreText.framework */,
 				4546FBDE1894B336008F3EDD /* CoreData.framework */,
 				45ED4F03188D649100C89E8A /* Foundation.framework */,
 				45ED4F05188D649100C89E8A /* CoreGraphics.framework */,
@@ -146,6 +147,7 @@
 		45ED4F09188D649100C89E8A /* ItCalc */ = {
 			isa = PBXGroup;
 			children = (
+				4574912718A282A50036AB06 /* html */,
 				45ED4F12188D649100C89E8A /* AppDelegate.h */,
 				45ED4F13188D649100C89E8A /* AppDelegate.m */,
 				45ED4F15188D649100C89E8A /* Main_iPhone.storyboard */,
@@ -167,8 +169,8 @@
 				456610B61896895A007527FB /* Const.m */,
 				45EE4390189CCA5B00FDCFCA /* CommonFunctions.h */,
 				45EE4391189CCA5B00FDCFCA /* CommonFunctions.m */,
-				45EE4393189CE5C300FDCFCA /* DetailViewController.h */,
-				45EE4394189CE5C300FDCFCA /* DetailViewController.m */,
+				4574912218A27FC40036AB06 /* DetailViewController.h */,
+				4574912318A27FC40036AB06 /* DetailViewController.m */,
 			);
 			path = ItCalc;
 			sourceTree = "<group>";
@@ -285,6 +287,7 @@
 				45ED4F22188D649100C89E8A /* Images.xcassets in Resources */,
 				45ED4F17188D649100C89E8A /* Main_iPhone.storyboard in Resources */,
 				45ED4F0E188D649100C89E8A /* InfoPlist.strings in Resources */,
+				4574912818A282A50036AB06 /* html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,10 +311,9 @@
 				45ED4F14188D649100C89E8A /* AppDelegate.m in Sources */,
 				45ED4F42188D6ACF00C89E8A /* MainViewController.m in Sources */,
 				45EE4392189CCA5B00FDCFCA /* CommonFunctions.m in Sources */,
-				45B40FCC189E8EF000A4D879 /* UILabel+EstimatedHeight.m in Sources */,
 				4546FC6A1894D658008F3EDD /* Tag.m in Sources */,
 				4546FBD71893C2DA008F3EDD /* PickerViewController.m in Sources */,
-				45EE4395189CE5C300FDCFCA /* DetailViewController.m in Sources */,
+				4574912418A27FC40036AB06 /* DetailViewController.m in Sources */,
 				4546FCBD1895095E008F3EDD /* TagAddViewController.m in Sources */,
 				4546FBDD1894B2D4008F3EDD /* Tag.xcdatamodeld in Sources */,
 				45ED4F10188D649100C89E8A /* main.m in Sources */,
@@ -458,7 +460,8 @@
 				INFOPLIST_FILE = "ItCalc/ItCal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ItCal;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0D0DB862-B3C0-4B68-9600-EA761074EBE9";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -468,14 +471,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ItCalc/ItCal-Prefix.pch";
 				INFOPLIST_FILE = "ItCalc/ItCal-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = ItCal;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "0D0DB862-B3C0-4B68-9600-EA761074EBE9";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -183,7 +183,7 @@
         NSDictionary *targetData = [self.items objectAtIndex:indexPath.row];
         
         DetailViewController *viewController = (DetailViewController*)[segue destinationViewController];
-        viewController.detailData = targetData;
+        viewController.detailData = [targetData objectForKey:@"Event"];
     }
 }
 

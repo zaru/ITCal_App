@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ja">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="jquery.js"></script>
+
+</head>
+<body>
+<div id="header">
+    <h1></h1>
+    <p id="description"></p>
+    <table>
+        <tr>
+            <td colspan="2"<span class="label">開催場所</span><br><span id="address"></span><span id="place"> </span></td>
+        </tr>
+        <tr>
+            <td colspan="2"><span class="label">開示時刻</span><br><span id="begin"></span></td>
+        </tr>
+        <tr>
+            <td colspan="2"><span class="label">終了時刻</span><br><span id="end"></span></td>
+        </tr>
+        <tr>
+            <td><span class="label">募集人数</span><br><span id="capacity">0人</span></td>
+            <td><span class="label">応募人数</span><br><span id="applicant">0人</span></td>
+        </tr>
+    </table>
+</div>
+<div id="menu">
+    <ul>
+        <li><a href="app-callback://map"><img src="bt_map.png" width="100" height="30"></a></li>
+        <li><a href="app-callback://safari"><img src="bt_safari.png" width="100" height="30"></a></li>
+    </ul>
+</div>
+<script>
+    jQuery(function(){
+        window.setTitle = function(text){
+            jQuery('h1').text(text);
+        };
+        window.setDescription = function(text){
+            jQuery('#description').html(text);
+        };
+        window.setAddress = function(text){
+            jQuery('#address').text(text);
+        };
+        window.setPlace = function(text){
+            jQuery('#place').text(text);
+        };
+        window.setBegin = function(text){
+            jQuery('#begin').text(text);
+        };
+        window.setEnd = function(text){
+            jQuery('#end').text(text);
+        };
+        window.setCapacity = function(text){
+            jQuery('#capacity').text(text + '人');
+        };
+        window.setApplicant = function(text){
+            jQuery('#applicant').text(text + '人');
+        };
+    });
+</script>
+</body>
+</html>
