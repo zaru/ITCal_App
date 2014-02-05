@@ -138,8 +138,8 @@
         lTitle.text = [item objectForKey:@"title"];
     }
     {
-        UILabel *lService = (UILabel *)[cell viewWithTag:2];
-        lService.text = [item objectForKey:@"service_id"];
+        UILabel *lPref = (UILabel *)[cell viewWithTag:2];
+        lPref.text = [item objectForKey:@"pref"];
     }
     {
         UILabel *lCapacity = (UILabel *)[cell viewWithTag:3];
@@ -213,14 +213,15 @@
     self.indiView.hidden = NO;
     [self.ai startAnimating];
     
-    NSURL *url;
-    if (self.selectedPref && ![self.selectedPref isEqualToString:@"すべて"]) {
-        url = [NSURL URLWithString:[[NSString stringWithFormat:ApiUriKeyword, self.selectedPref, (self.currentPage - 1) * ListNum + 1, ListNum] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    } else if (self.searchWord) {
-        url = [NSURL URLWithString:[[NSString stringWithFormat:ApiUriKeyword, self.searchWord, (self.currentPage - 1) * ListNum + 1, ListNum]stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-    } else {
-        url = [NSURL URLWithString:[NSString stringWithFormat:ApiUri, (self.currentPage - 1) * ListNum + 1, ListNum]];
-    }
+    self.selectedPref = (self.selectedPref) ? self.selectedPref : @"";
+    self.searchWord = (self.searchWord) ? self.searchWord : @"";
+    
+    NSURL *url = [NSURL URLWithString:[[NSString stringWithFormat:ApiUri,
+                                        (self.currentPage - 1) * ListNum + 1,
+                                        ListNum,
+                                        self.selectedPref,
+                                        self.searchWord]
+                                       stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
