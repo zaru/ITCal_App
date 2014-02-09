@@ -80,7 +80,7 @@
             NSString *map = [NSString stringWithFormat:@"http://maps.apple.com/maps?ll=%@,%@", [self.detailData objectForKey:@"lat"], [self.detailData objectForKey:@"lon"]];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:map]];
         } else if ([method isEqualToString:@"safari"]) {
-            NSURL *url = [NSURL URLWithString:@"http://d.hatena.ne.jp/murapong"];
+            NSURL *url = [NSURL URLWithString:[self.detailData objectForKey:@"url"]];
             [[UIApplication sharedApplication] openURL:url];
         }
         return NO;
